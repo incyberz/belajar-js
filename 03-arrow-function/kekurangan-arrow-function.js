@@ -21,8 +21,8 @@
 // ==============================================
 // TIDAK BISA UNTUK OBJECT CONSTRUCTOR
 // ==============================================
-// var Foo = () => {};
-// var foo = new Foo(); // TypeError: Foo is not a constructor
+// const Foo = () => {};
+// let foo = new Foo(); // TypeError: Foo is not a constructor
 
 // ==============================================
 // TANPA ARGUMEN
