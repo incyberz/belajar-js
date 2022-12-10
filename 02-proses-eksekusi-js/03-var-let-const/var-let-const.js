@@ -55,15 +55,15 @@
 //        VARIABEL BIASA (BAD CASE)
 // =====================================
 // console.log(tim);
-// var tim = [];
+// var tim = []; // array
 // tim[0] = "Ahmad";
 // tim[1] = "Budi";
 // console.log(tim);
-// var tim = "Charlie";
+// var tim = "Charlie"; //var primitive string
 // console.log(tim);
 
 // =====================================
-// let :: ARRAY TIDAK BISA BERUBAH,
+// let :: ARRAY TIDAK BISA BERUBAH BENTUK,
 //        ELEMEN ARRAY BISA DIMANIPULASI
 // =====================================
 // console.log(tim);
@@ -75,13 +75,14 @@
 // console.log(tim);
 
 // =====================================
-// const :: ARRAY TIDAK BISA BERUBAH,
+// const :: ARRAY TIDAK BISA BERUBAH BENTUK,
 //        ELEMEN ARRAY BISA DIMANIPULASI
 //        UKURAN MEMORI PALING KECIL
 // =====================================
 // const tim = [];
 // tim[0] = "Ahmad";
 // tim[1] = "Budi";
+// tim[1] = "Charlie";
 // console.log(tim);
 
 // =====================================

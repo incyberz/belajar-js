@@ -5,7 +5,7 @@
 // Embedded Expression
 // HTML Fragments
 // Expression Interpolation
-// Tagged Template
+// Tagged Template + Spread Operator
 // =============================================
 
 // =============================================
@@ -48,10 +48,10 @@
 // =============================================
 // Expression Interpolation
 // =============================================
-// let x = 2;
-// let y = 3;
-// console.log(`
-// Jika nilai x = ${x}
-// dan nilai y = ${y}
-// maka hasil perkalian keduanya
-// ${x} * ${y} = ${x * y}`);
+let x = 2;
+let y = 3;
+console.log(`
+Jika nilai x = ${x}
+dan nilai y = ${y}
+maka hasil perkalian keduanya
+${x} * ${y} = ${x * y}`);

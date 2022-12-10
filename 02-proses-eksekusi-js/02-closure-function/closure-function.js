@@ -2,6 +2,8 @@
 // CLOSURE = FUNCTION DI DALAM FUNCTION
 // ====================================
 let x = 2;
+// console.log(y);
+
 function hitung() {
   let y = 3;
 

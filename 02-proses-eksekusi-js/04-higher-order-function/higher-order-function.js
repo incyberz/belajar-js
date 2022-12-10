@@ -1,7 +1,8 @@
 // =============================================
 // INPUT ARRAY
 // =============================================
-// const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+// console.log(arr);
 
 // =============================================
 // FUNGSI FILTER-GANJIL
@@ -47,13 +48,13 @@
 //   return filteredArr;
 // }
 
-// function isGanjil(x) {
-//   return x % 2 != 0;
-// }
+function isGanjil(x) {
+  return x % 2 != 0;
+}
 
-// function isGenap(x) {
-//   return x % 2 === 0;
-// }
+function isGenap(x) {
+  return x % 2 === 0;
+}
 
 // console.log(filterFunction(arr, isGanjil));
 // console.log(filterFunction(arr, isGenap));
@@ -78,8 +79,8 @@
 //   return n >= 5;
 // });
 // console.log(limaLebih);
-// console.log(arr.filter(isGanjil));
-// console.log(arr.filter(isGenap));
+console.log(arr.filter(isGanjil));
+console.log(arr.filter(isGenap));
 
 // =============================================
 // =============================================
@@ -89,10 +90,11 @@
 // =============================================
 // FILTER FUNCTION CHAINING
 // =============================================
-// function lebihDari5(x) {
-//   return x > 5;
-// }
-// function kurangDari10(x) {
-//   return x < 10;
-// }
-// console.log(arr.filter(lebihDari5).filter(kurangDari10).filter(isGenap));
+function lebihDari5(x) {
+  return x > 5;
+}
+function kurangDari10(x) {
+  return x < 10;
+}
+
+console.log(arr.filter(isGenap).filter(lebihDari5).filter(kurangDari10));
