@@ -4,7 +4,7 @@ const rekaman1 = new Promise((sukses, gagal) => {
 });
 
 const rekaman2 = new Promise((sukses, gagal) => {
-  // sukses('rekaman 2 selesai')
+  sukses("rekaman 2 selesai");
 });
 
 const rekaman3 = new Promise((sukses, gagal) => {
