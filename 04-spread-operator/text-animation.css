@@ -2,16 +2,26 @@ h2 {
     font-size: 40px; 
     font-family: 'century gothic';
     text-align: center;
+
+    /* transition: .2s;
+    cursor: pointer; */
 }
+
+h2:hover{
+    /* transform: scale(1.2);
+    color: blue; */
+}
+
 h2 span{
     cursor: pointer;
     transition: .2s;
     display: inline-block;
 }
 
+
 h2 span:hover{
     transform: scale(1.2) translateY(-5px);
     color: darkblue;
     text-shadow: 1px 1px 3px red;
     margin: 0 3px;
-}
+} 
