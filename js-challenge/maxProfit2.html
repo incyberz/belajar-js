@@ -1,0 +1,31 @@
+<script type="text/javascript">
+	function maxProfitDays(arr) {
+
+	let currentProfit = 0;
+	let biggestProfit = 0;
+	let buyAndSellList = 0;
+
+	for (let x = 0; x < arr.length; x++){
+	for (let y = x; y < arr.length; y++){
+
+	  currentProfit = arr[y] - arr[x];
+
+	  if (currentProfit >= biggestProfit){ 
+	    biggestProfit = currentProfit;
+	    buyAndSellList[0] = x;
+	    buyAndSellList[1] = y;
+	    
+	  }
+	}
+	}
+
+	return buyAndSellList;
+
+	}
+
+	const stockList = [17, 11, 60, 25, 150, 75, 2, 190];
+	console.log(maxProfitDays(stockList));
+
+	// Leave this so we can test your code:
+	//module.exports = maxProfitDays;
+</script>

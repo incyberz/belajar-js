@@ -1,0 +1,61 @@
+<h4>Get Unique Object Properties</h4>
+<p>Mention unique majors in this object!</p>
+<span>students =</span>
+<div id="theObject">theObject</div>
+<hr>
+Unique majors are:
+<ol id="list"></ol>
+
+
+<script>
+
+	const students = [
+		{
+			"name": "Ahmad Firdaus",
+			"major": "Informatics"
+		},
+		{
+			"name": "Budi Santoso",
+			"major": "Economics"
+		},
+		{
+			"name": "Cici Paramida",
+			"major": "Educations"
+		},
+		{
+			"name": "Deni Darmawan",
+			"major": "INFORMATICS"
+		},
+		{
+			"name": "Erwin Gutawa",
+			"major": "informatics"
+		},
+		{
+			"name": "Salwa Fatimah",
+			"major": "economics"
+		}
+		];
+
+	document.getElementById('theObject').innerHTML = JSON.stringify(students);
+
+
+	function uniqueObjectProperties(students){
+
+		let list = document.getElementById('list');
+
+		let arrMajor = students.map(students => students.major.toUpperCase());
+		let majors = new Set(arrMajor);
+
+		majors.forEach((a)=>{
+			let entry = document.createElement('li');
+			entry.appendChild(document.createTextNode(a));
+			list.appendChild(entry);
+		})
+
+		return [...new Set(arrMajor)]
+
+	}
+
+
+	console.log(uniqueObjectProperties(students));
+</script>

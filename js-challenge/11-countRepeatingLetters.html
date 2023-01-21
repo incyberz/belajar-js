@@ -1,0 +1,36 @@
+<h4>countRepeatingLetters</h4>
+<p>String: <span id="string">aaaaiiuuuueeeeoooqqqqwwww</span></p>
+<hr>
+<p>Result: <span id="result">?</span></p>
+
+<script>
+
+	function countRepeatingLetters(str){
+		let tmpArr = str.toLowerCase().match(/[a-z]/g);
+		let letters = [];
+		let count = 1;
+
+		for(let i=0; i<tmpArr.length;i++){
+			if(tmpArr[i]===tmpArr[i+1]){
+				count++
+			}else{
+				let value = `${count}${tmpArr[i]}`;
+				letters = [...letters,value];
+				count=1
+			}
+		}
+		return letters.join('')
+
+	}
+
+	function action(){
+
+		let string = document.getElementById('string').innerHTML;
+
+		document.getElementById('result').innerHTML = countRepeatingLetters(string);
+
+	}
+
+	action();
+
+</script>

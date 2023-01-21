@@ -1,0 +1,24 @@
+<script>
+	const methodMhs = {
+		makan: function(porsi){
+			this.energi += porsi;
+		},
+		main: function(jam){
+			this.energi -= porsi;
+		},
+		tidur: function(jam){
+			this.energi += jam*2;
+		}
+	}
+
+	function Mhs(nama, energi){
+		let mhs = Object.create(methodMhs);
+		mhs.nama = nama;
+		mhs.energi = energi;
+		return mhs;
+	}
+
+	let Iin = Mhs('Iin',20);
+	let Lena = Mhs('Lena',15);
+
+</script>

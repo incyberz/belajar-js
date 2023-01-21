@@ -1,0 +1,174 @@
+<script src="jquery.min.js"></script>
+<script>
+	var i;
+	var array1 = [ 45, 4, 9, 16, 25 ];
+
+	let materi = [
+		'Array.forEach()',
+		'Array.map()',
+		'Array.filter()',
+		'Array.reduce()',
+		'Array.every()',
+		'Array.some()',
+		'Array.indexOf()',
+		'Array.find()',
+		'Array.findIndex()',
+		'Array.from()',
+		'Array.includes()',
+	];
+
+	let jumlah_materi = materi.length;
+
+	
+	let dc = document.cookie;
+	let dc_split = dc.split(";");
+	var strc;
+	var strc_split;
+	var materi_sudah;
+	for(i=0; i<dc_split.length;i++){
+		strc = dc_split[i].trim();
+		strc_split = strc.split("=");
+		materi_sudah = strc_split[1];
+		if(strc_split[0]=="materi_sudah") break;
+	}
+
+</script>
+
+<style type="text/css">
+	body{
+		font-family: "Verdana", monospace;
+		font-size: 10pt;
+	}
+
+	h4{
+		color: blue;
+	}
+
+	.list_materi{
+		transition: .2s;
+		cursor: pointer;
+		color: gray;
+	}
+
+	.list_materi:hover{
+		color: blue;
+		/*font-size: 14pt;*/
+		letter-spacing: 2px;
+		background-color: #efe;
+	}
+
+	.sudah{
+		color: green !important;
+		font-weight: bold;
+	}
+
+	.grid-container{
+		display: grid;
+		column-gap: 5px;
+		grid-template-columns: 220px auto;
+	}
+
+	.grid-container div{
+		border: solid 1px #ccc;
+		padding: 10px;
+		border-radius: 10px;
+	}
+
+	#hasil{
+		margin-top: 10px;
+		height: 400px;
+		overflow-y: scroll;
+	}
+
+	.list_hasil{
+		color: gray;
+	}
+
+
+</style>
+
+<script>
+	$(document).ready(function(){
+		$(".list_materi").click(function(){
+			let id = $(this).prop("id");
+			let rid = id.split("__");
+			let materi_sudah = parseInt(rid[1])+1;
+
+			let j = confirm("Yakin set materi sudah hingga materi-"+materi_sudah+"?");
+			if(!j) return;
+
+			document.cookie = "materi_sudah="+materi_sudah;
+			$(this).addClass("sudah");
+			$("#materi_sudah").text(materi_sudah);
+			location.reload();
+		})
+	})
+</script>
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>JS Iteration</title>
+</head>
+<body>
+
+	<div class="grid-container">
+		<div>
+			
+			<h4 align="center">JS :: ARRAY ITERATION</h4>
+			<!-- <p>Materi sudah hingga: <span id="materi_sudah"><script>document.write(materi_sudah)</script></span></p> -->
+			<ol>
+				<script>
+					var sudah;
+					for (i = 0; i < jumlah_materi; i++) {
+						sudah = "";
+						if(i<materi_sudah) sudah = "sudah";
+						document.write("<li class='list_materi "+sudah+"' id='list_materi__"+i+"'>"+materi[i]+"</li>");
+					}
+				</script>
+			</ol>
+
+			<hr style="color:#eee">
+			<p align="center" style="color: #aaa;">By: Iin, M.Kom</p>
+		</div>
+		<div>
+			<pre>array1 = [ 45, 4, 9, 16, 25 ]<br>index:     0   1  2  3   4</pre>
+			Hasil:
+			<div id="hasil">
+
+				<script type="text/javascript">
+
+					// ===============================================
+					// TULIS CODE DISINI
+					// ===============================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+					// ===============================================
+					// END OF CODE
+					// ===============================================
+				</script>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

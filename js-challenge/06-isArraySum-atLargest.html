@@ -1,0 +1,34 @@
+<h4>Array SUM at Largest Value of Array</h4>
+<p>Check if Largest Value in Array is equal to Array SUM of the rest of items</p>
+<span>example:</span>
+<ul>
+	<li>[ <span id="arr">12, 2, 24, 2, 56, 4, 11</span> ]</li>
+	<li>Ii 56 is equal to arraySum of this array?</li>
+	<li>Result: <span id="result">?</span></li>
+</ul>
+
+
+<script>
+	function isArraySum(arr){
+		// if (!arr) return false;
+
+		// alert(arr);
+
+		let r = arr.split(',').map(i=>{
+			return parseInt(i)
+		}).sort((a,b)=>{
+			return a-b;
+		});
+
+		let biggest = r.pop();
+
+		return biggest === r.reduce((p,a)=>p+a,0)
+	}
+
+	function action(){
+		let arr = document.getElementById('arr').innerHTML;
+		document.getElementById('result').innerHTML = isArraySum(arr);
+	}
+
+	action();
+</script>

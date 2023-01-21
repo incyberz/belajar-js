@@ -1,0 +1,41 @@
+[
+
+{
+  "nama": "Ahmad Firdaus",
+  "usia": 21,
+  "nim" : "41414141",
+  "tanggal_lahir": "2000-12-15",
+
+  "pembimbing": 
+  [{
+    "nama": "Iin Sholihin",
+    "nidn": "0411068706"
+  },
+
+  {
+    "nama": "Yudhistira",
+    "nidn": "2345678990"
+  }]
+},
+
+{
+  "nama": "Salwa Fatimah",
+  "usia": 20,
+  "nim" : "41414142",
+  "tanggal_lahir": "2001-12-15",
+
+  "pembimbing": 
+  [{
+    "nama": "Iin Sholihin",
+    "nidn": "0411068706"
+  },
+
+  {
+    "nama": "Yudhistira",
+    "nidn": "2345678990"
+  }]
+}
+
+
+
+]

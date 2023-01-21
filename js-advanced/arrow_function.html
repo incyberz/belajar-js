@@ -1,0 +1,64 @@
+<script type="text/javascript">
+
+	// ====================================
+	// CARA MENULIS FUNCTION */
+	// ====================================
+	// 1. Cara Lama 
+	// 2. Arrow Function, Dua Parameter 
+	// 3. Arrow Function, Satu Parameter 
+	// 4. Arrow Function, Tanpa Parameter 
+	// 5. Arrow Function, Implisit Return 
+	// 6. Arrow Function, More Implisit Return 
+	// ====================================
+
+	let fungsi1 = function(user){
+		return console.log(`Halo ${user}! Anda memakai cara lama.`);
+	}
+
+	let fungsi2 = (user, waktu) => {
+		return console.log(`Halo ${user}! Selamat ${waktu}! Anda memakai cara ke-2.`);
+	}
+
+	let fungsi3 = user => {
+		return console.log(`Halo ${user}! Anda memakai cara ke-3.`);
+	}
+	
+	let fungsi4 = () => {
+		return console.log(`Halo Pengunjung! Anda memakai cara ke-4.`);
+	}
+	
+	let fungsi5 = () => {console.log(`Halo Pengunjung! Anda memakai cara ke-5.`);}
+	
+	let fungsi6 = () => console.log(`Halo Pengunjung! Anda memakai cara ke-6.`);
+	
+	
+
+	// fungsi1("Ahmad");
+	// fungsi2("Budi","Pagi");
+	// fungsi3("Charlie");
+	// fungsi4();
+	// fungsi5();
+	// fungsi6();
+
+
+	// ====================================
+	// PENGGUNAAN ARROW FUNCTION
+	// ====================================
+	// 1. Hitung Jumlah Huruf tiap Item Array
+	// 2. Dapatkan Object dari Array Map
+	// ====================================
+
+	let mahasiswa = ["Ahmad Firdaus", "Bagas Prayogo", "Charlie", "Deni Kusuma"];
+
+	// 1
+	let jumlahHuruf = mahasiswa.map(nama => nama.length);
+	console.log(jumlahHuruf);
+
+	// 2
+	// let dataMahasiswa = mahasiswa.map(nama => ({ nama: nama, panjangHuruf: nama.length}));
+	let dataMahasiswa = mahasiswa.map(nama => ({ nama, panjangHuruf: nama.length}));
+	console.log(dataMahasiswa);
+	console.table(dataMahasiswa);
+
+
+</script>

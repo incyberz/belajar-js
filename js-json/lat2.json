@@ -1,0 +1,18 @@
+{
+  "namaLengkap" : "IIN SHOLIHIN",
+  "nidn"        : "04110687",
+  "tempatLahir" : "SUMEDANG",
+  "tanggalLahir": "1987-1-1",
+  "jenisKelamin": "laki-laki"
+  "pendidikan"  : [
+                    {
+                      "tingkat": "Sarjana",
+                      "asalSekolah": "UNIBI Bandung",
+                    },
+                    {
+                      "tingkat": "Magister",
+                      "asalSekolah": "LIKMI Bandung",
+                    }
+                  ]
+
+}

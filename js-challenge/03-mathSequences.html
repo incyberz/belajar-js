@@ -1,0 +1,44 @@
+<h3>Math Sequences</h3>
+<ol>
+	<li id="seq1">2,4,6,8</li>
+	<li id="seq2">3,9,27,81</li>
+	<li id="seq3">2,5,11,80</li>
+</ol>
+<div>Result:</div>
+<ol>
+	<li id="res1">?</li>
+	<li id="res2">?</li>
+	<li id="res3">?</li>
+</ol>
+<script>
+
+
+	function MathSequence(r){
+		let nr = new Set();
+		let nr2 = new Set();
+		for (let i=1; i<r.length;i++) {
+			nr.add(r[i]-r[i-1]);
+			nr2.add(r[i]/r[i-1]);
+		}
+		let result = 'Not a Sequence';
+		if(nr.size===1) result = 'Linear Sequence';
+		if(nr2.size===1) result = 'Geometric Sequence';
+		return result;
+	}
+
+	let arr1 = document.getElementById('seq1').innerHTML.split(',');
+	let arr2 = document.getElementById('seq2').innerHTML.split(',');
+	let arr3 = document.getElementById('seq3').innerHTML.split(',');
+	// alert(k);
+
+	document.getElementById('res1').innerHTML = MathSequence(arr1);
+	document.getElementById('res2').innerHTML = MathSequence(arr2);
+	document.getElementById('res3').innerHTML = MathSequence(arr3);
+
+	// console.log(MathSequence(arr1));
+	// console.log(MathSequence(arr2));
+	// console.log(MathSequence(arr3));
+
+
+
+</script>

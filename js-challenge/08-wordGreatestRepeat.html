@@ -1,0 +1,47 @@
+<h4>wordGreatestRepeat</h4>
+<p>Return first word with greatest number of repeated letters!</p>
+<textarea style="width:100%" id="str" onkeyup="action()"> javascript  is the most love language. it's very entertaining </textarea>
+<hr>
+Return: <span id="result">?</span>
+
+
+<script>
+
+	function wordGreatestRepeat(str){
+
+		let tempArr = str.toLowerCase().match(/[a-z]+/g)
+
+		tempArr = tempArr.map(item=>{
+			let tempItem = item.toLowerCase().split("")
+			return tempItem.reduce((acc,cur)=>{
+				acc[cur] = acc[cur] ? acc[cur]+1 : 1;
+				if(acc[cur]>acc.max) acc.max = acc[cur]
+				return acc
+			},
+			{ max:1,word:item})
+		})
+
+
+		let amount = 1;
+		let word = '';
+		for(let item of tempArr){
+			if(item.max>amount){
+				amount=item.max;
+				word=item.word
+			}
+		}
+
+		return amount>1 ? word : -1;
+	}
+
+	function action(){
+
+		let str = document.getElementById('str').value.toLowerCase();
+		document.getElementById('result').innerHTML = wordGreatestRepeat(str);
+		console.log(wordGreatestRepeat(str));
+
+	}
+
+	action();
+
+</script>

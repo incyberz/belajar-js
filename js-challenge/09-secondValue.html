@@ -1,0 +1,65 @@
+<h4>secondValue</h4>
+<p>Return second-min and second-max value of an array</p>
+<table width="100%" border="1" cellspacing="0" cellpadding="3">
+	<tr>
+		<td width="50%" align="center">
+			Arrays
+		</td>
+		<td align="center">
+			Second Min & Max
+		</td>
+	</tr>
+	<tr>
+		<td width="50%">
+			<ul>
+				<li id="arr1">1</li>
+				<li id="arr2">4,2</li>
+				<li id="arr3">11,44,22</li>
+				<li id="arr4">3,2,88,3,-11,67,7</li>
+			</ul>			
+		</td>
+		<td>
+			<ul>
+				<li id="res1">1</li>
+				<li id="res2">4,2</li>
+				<li id="res3">11,44,22</li>
+				<li id="res4">3,2,88,3,-11,67,7</li>
+			</ul>
+		</td>
+	</tr>
+	
+</table>
+
+
+
+<script>
+
+	function secondValue(arr){
+		let values = [...new Set(arr)].sort((a,b)=>a-b);
+
+		if(values.length<2){
+			return `${values[0]}`
+		}else if(values.length==2){
+			return `${values[0]} ${values[1]}`
+		}else{
+			return `${values[1]} ${values[values.length-2]}`
+		}
+	}
+
+	function action(){
+
+		let arr1 = document.getElementById('arr1').innerHTML.split(',');
+		let arr2 = document.getElementById('arr2').innerHTML.split(',');
+		let arr3 = document.getElementById('arr3').innerHTML.split(',');
+		let arr4 = document.getElementById('arr4').innerHTML.split(',');
+
+		document.getElementById('res1').innerHTML = secondValue(arr1);
+		document.getElementById('res2').innerHTML = secondValue(arr2);
+		document.getElementById('res3').innerHTML = secondValue(arr3);
+		document.getElementById('res4').innerHTML = secondValue(arr4);
+
+	}
+
+	action();
+
+</script>

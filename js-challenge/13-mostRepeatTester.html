@@ -1,0 +1,78 @@
+<h4>repeatMostTester</h4>
+<table width="100%" border="1" cellspacing="0" cellpadding="3">
+	<tr>
+		<td width="50%" align="center">
+			Arrays
+		</td>
+		<td align="center">
+			Most repeat?
+		</td>
+	</tr>
+	<tr>
+		<td width="50%">
+			<ul>
+				<li id="arr1">5,2,2,1,5</li>
+				<li id="arr2">6,5,5,10,10,5</li>
+				<li id="arr3">3,4,1,6,10</li>
+			</ul>			
+		</td>
+		<td>
+			<ul>
+				<li id="res1">?</li>
+				<li id="res2">?</li>
+				<li id="res3">?</li>
+			</ul>
+		</td>
+	</tr>
+	
+</table>
+
+
+
+<script>
+
+	function repeatMostTester(arr){
+		let max = 1;
+		let pos = 0;
+		let value = -1;
+
+		let tmpNum = arr.reduce((acc,cur,index)=>{
+			acc[cur]=acc[cur] 
+			? { ...acc[cur],amount:acc[cur]["amount"]+1}
+			: { amount:1, index}
+
+			let amount = acc[cur].amount;
+			let place = acc[cur].index;
+
+			if(amount>max){
+				max=amount;
+				value=cur;
+				pos=place
+			}
+
+			if(amount===max && place<=pos && amount>1){
+				max = amount;
+				value = cur;
+				pos = place;
+			}
+
+			return acc
+		},{});
+		return value
+	}
+
+	function action(){
+
+		let arr1 = document.getElementById('arr1').innerHTML.split(',');
+		let arr2 = document.getElementById('arr2').innerHTML.split(',');
+		let arr3 = document.getElementById('arr3').innerHTML.split(',');
+
+		document.getElementById('res1').innerHTML = repeatMostTester(arr1);
+		document.getElementById('res2').innerHTML = repeatMostTester(arr2);
+		document.getElementById('res3').innerHTML = repeatMostTester(arr3);
+
+	}
+
+	action();
+
+</script>

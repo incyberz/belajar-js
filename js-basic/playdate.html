@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Play Date-JS</title>
+</head>
+<body>
+	<h4>Play Date Datatype</h4>
+	<hr>
+	<script type="text/javascript">
+		var hari_ini = new Date();
+		var tanggal_skg = hari_ini.toLocaleString();
+
+		document.write("Hari ini:  "+tanggal_skg);
+
+		var hari_ke = hari_ini.getDay();
+		var tgl = hari_ini.getDate();
+		var bln = hari_ini.getMonth();
+		var thn = hari_ini.getFullYear();
+
+		var nama_hari = [
+			"Ahad",
+			"Senin",
+			"Selasa",
+			"Rabu",
+			"Kamis",
+			"Jumat",
+			"Sabtu"
+		];
+
+		var nama_bulan = [
+		  "Januari",
+		  "Februari",
+		  "Maret",
+		  "April",
+		  "Mei",
+		  "Juni",
+		  "Juli",
+		  "Agustus",
+		  "September",
+		  "Oktober",
+		  "November",
+		  "Desember"
+		];
+
+		document.write("<hr>Hari ini hari:  "
+			+nama_hari[hari_ke]+", "
+			+tgl+" "
+			+nama_bulan[bln]+" "
+			+thn);
+
+		document.write("<hr>Tanggal lahir saya: 11 Juni 2003");
+		var tgl_lahir = new Date("2003-6-11");
+		document.write("<hr>Tahir lahir versi JS: "+ tgl_lahir);
+
+
+		var usia = Math.abs(hari_ini - tgl_lahir);
+		
+
+		document.write("<hr>Usia saya saat ini adalah "+usia+" milisecond.");
+
+
+		var usia_hari = Math.ceil(usia/(1000*24*60*60));
+		document.write("<hr>Usia saya saat ini adalah "+usia_hari+" hari.");
+		
+
+		var usia_tahun = Math.ceil(usia/(1000*24*60*60*365));
+		document.write("<hr>Usia saya saat ini adalah "+usia_tahun+" tahun.");
+
+
+
+
+
+
+
+	</script>
+
+</body>
+</html>

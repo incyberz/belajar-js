@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>CRUD Array</title>
+</head>
+<body>
+	<fieldset>
+		<legend>CRUD Array - Input Form</legend>
+		<input type="text" name="barang" placeholder="input nama barang...">
+		<input type="button" onclick="addBarang()" value="Tambah">
+	</fieldset>
+
+	<div>
+		<ol id="list-barang"></ol>
+	</div>
+
+</body>
+</html>
+
+<script type="text/javascript">
+
+	let dc = document.cookie;
+	let dc_split = dc.split(";");
+	let strc;
+	let strc_split;
+	var isi_array;
+	for(i=0; i<dc_split.length;i++){
+		strc = dc_split[i].trim();
+		strc_split = strc.split("=");
+		isi_array = strc_split[1];
+		if(strc_split[0]=="isi_array") break;
+	}
+
+	console.log(`isi_array di cookie:${isi_array}  `);
+
+
+	if(isi_array){
+
+		//jika di cookies sudah ada
+		var arrBarang = isi_array.split("~");
+	}else{
+
+		// jika tampilan browser pertama kali
+		var arrBarang = ['Buku Tulis', 'Pensil', 'Spidol'];
+	}
+
+	function showBarang(){
+
+		let listBarang = document.getElementById('list-barang');
+
+		//kosongkan dahulu list-barang
+		listBarang.innerHTML = "";
+
+		//lakukan looping sebanyak jumlah item pada array
+		for (let i = 0; i < arrBarang.length; i++) {
+			let btnEdit = `
+				<a href='#' 
+				onclick='editBarang(${i})'>Edit</a>`;
+			let btnHapus = `
+				<a href='#' 
+				onclick='hapusBarang(${i})'>Hapus</a>`;
+
+			// penggabungan nilai listbarang dg format yang kita inginkan
+			listBarang.innerHTML += `
+			<li>
+			  ${arrBarang[i]} | ${btnEdit} | ${btnHapus}
+			</li>
+			`;
+		}
+
+
+		// update cookie
+		document.cookie = "isi_array="+arrBarang.join("~");
+		// console.log(document.cookie);
+	}
+
+	function addBarang(){
+		// dapatkan input dari ketikan user
+		let input = document.querySelector(`input[name=barang]`).value;
+
+		// input length validations
+		if(input.length<3 && input.length>20){
+			alert('Panjang nama barang antara 3 s.d 20 huruf. Silahkan coba lagi!');
+			return; //stop disini, jangan lanjutkan kode ke bawah
+		}
+
+		// validasi dengan array includes
+		if(arrBarang.includes(input)){
+			alert(`Nama barang ${input} sudah ada pada Array. Silahkan coba dengan barang lain!`);
+			return;
+		}
+
+		//tambahkan ke array paling akhir
+		arrBarang.push(input);
+
+		//update tampilan
+		showBarang();
+	}
+
+	function editBarang(id){
+		let newNamaBarang = prompt("Nama baru:",arrBarang[id]);
+		if(!newNamaBarang) return;
+		if(newNamaBarang == arrBarang[id]) return;
+
+		arrBarang[id] = newNamaBarang;
+		showBarang();
+	}
+
+	function hapusBarang(id){
+		let yakin = confirm(`Yakin untuk menghapus barang: ${arrBarang[id]}?`);
+		if(!yakin) return;
+		
+		arrBarang.splice(id,1);
+		showBarang();
+	}
+
+
+	// tampilan pertama saat file html dibuka
+	showBarang();
+</script>

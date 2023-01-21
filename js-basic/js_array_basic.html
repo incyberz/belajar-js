@@ -1,0 +1,185 @@
+<script src="jquery.min.js"></script>
+<script>
+	var i;
+	var array1 = [ "Markisa", "Strawberry", "Alpukat", "Delima", "Kurma" ];
+
+	let materi = [
+		'Menulis Array',
+		'Menampilkan Elemen',
+		'Panjang Array',
+		'Array Object',
+		'Function Object'
+	];
+
+	let jumlah_materi = materi.length;
+
+	
+	let dc = document.cookie;
+	let dc_split = dc.split(";");
+	var strc;
+	var strc_split;
+	var materi_sudah;
+	for(i=0; i<dc_split.length;i++){
+		strc = dc_split[i].trim();
+		strc_split = strc.split("=");
+		materi_sudah = strc_split[1];
+		if(strc_split[0]=="materi_sudah") break;
+	}
+
+</script>
+
+<style type="text/css">
+	body{
+		font-family: "Verdana", monospace;
+		font-size: 10pt;
+	}
+
+	h4{
+		color: blue;
+	}
+
+	.list_materi{
+		transition: .2s;
+		cursor: pointer;
+		color: gray;
+	}
+
+	.list_materi:hover{
+		color: blue;
+		/*font-size: 14pt;*/
+		letter-spacing: 2px;
+		background-color: #efe;
+	}
+
+	.sudah{
+		color: green !important;
+		font-weight: bold;
+	}
+
+	.grid-container{
+		display: grid;
+		column-gap: 5px;
+		grid-template-columns: 220px auto;
+	}
+
+	.grid-container div{
+		border: solid 1px #ccc;
+		padding: 10px;
+		border-radius: 10px;
+	}
+
+	#hasil{
+		margin-top: 15px;
+	}
+
+	.list_hasil{
+		color: gray;
+	}
+
+
+</style>
+
+
+<div class="grid-container">
+	<div>
+		
+		<h4 align="center">JS :: ARRAY BASIC</h4>
+		<!-- <p>Materi sudah hingga: <span id="materi_sudah"><script>document.write(materi_sudah)</script></span></p> -->
+		<ol>
+			<script>
+				var sudah;
+				for (i = 0; i < jumlah_materi; i++) {
+					sudah = "";
+					if(i<materi_sudah) sudah = "sudah";
+					document.write("<li class='list_materi "+sudah+"' id='list_materi__"+i+"'>"+materi[i]+"</li>");
+				}
+			</script>
+		</ol>
+
+		<hr style="color:#eee">
+		<p align="center" style="color: #aaa;">By: Iin, M.Kom</p>
+	</div>
+	<div>
+		<pre>array1 = [ "Markisa", "Strawberry", "Alpukat", "Delima", "Kurma" ]<br>index:      0          1             2          3         4
+		</pre>
+		<div id="hasil">
+			Hasil:
+			<ol>
+				<script>
+					var sudah;
+					var j;
+					for (i = 0; i < jumlah_materi; i++) {
+						j = i+1;
+						sudah = "";
+						if(i<materi_sudah) sudah = "sudah";
+						document.write("<li class='list_hasil "+sudah+"' id='list_hasil__"+i+"'>hasil"+j+": <span id='hasil"+j+"'></span></li>");
+					}
+				</script>
+			</ol>
+		</div>
+	</div>
+
+</div>
+
+
+<script>
+	$(document).ready(function(){
+		$(".list_materi").click(function(){
+			let id = $(this).prop("id");
+			let rid = id.split("__");
+			let materi_sudah = parseInt(rid[1])+1;
+
+			let j = confirm("Yakin set materi sudah hingga materi-"+materi_sudah+"?");
+			if(!j) return;
+
+			document.cookie = "materi_sudah="+materi_sudah;
+			$(this).addClass("sudah");
+			$("#materi_sudah").text(materi_sudah);
+			location.reload();
+		})
+	})
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<!-- =========================================== -->
+<!-- TAMPILKAN HASIL -->
+<!-- =========================================== -->
+<script type="text/javascript">
+	// document.getElementById("hasil1").innerHTML = "<pre>"+array1+"</pre>";
+
+	// document.getElementById("hasil2").innerHTML = "Elemen ke-2 pada Array yaitu: "+ array1[1];
+
+
+	// document.getElementById("hasil3").innerHTML = "Panjang Array yaitu: "+array1.length+ " elemen";
+
+	// let buah_favorit = {
+	// 	ahmad: "Markisa",
+	// 	budi: "Strawberry",
+	// 	charlie: "Alpukat",
+	// 	deni: "Delima",
+	// 	erwin: "Kurma",
+
+	// 	pilihan_budi: function(){
+	// 		return this.budi;
+	// 	}
+	// }
+
+	// document.getElementById("hasil4").innerHTML = "<pre>"+buah_favorit+"</pre>";
+
+	// console.log(buah_favorit);
+
+
+	// document.getElementById("hasil5").innerHTML = "Buah Favorit pilihan budi adalah: "+ buah_favorit.pilihan_budi();
+
+
+
+</script>

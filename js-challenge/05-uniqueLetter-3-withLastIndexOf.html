@@ -1,0 +1,27 @@
+<h4>uniqueLetter with lastIndexOf</h4>
+
+<input id="str" style="width:100%" onkeyup="action()">
+<hr>
+<p id="result">result</p>
+
+
+<script>
+	function uniqueLetter(str){
+		if (!str) return false;
+
+		for(let i=0; i<str.length;i++){
+			if(str.lastIndexOf(str[i])!==i){
+				return false;
+			} 
+		}
+
+		return true;
+	}
+
+	function action(){
+		let str = document.getElementById('str').value;
+		document.getElementById('result').innerHTML = uniqueLetter(str) ? `it's unique` : `--not unique`;
+	}
+
+	action();
+</script>

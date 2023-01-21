@@ -1,0 +1,23 @@
+<h4>firstCapitalize</h4>
+
+<input id="pgf" style="width:100%" onkeyup="action()">
+<hr>
+<p id="result">result</p>
+
+
+<script>
+	function firstCapitalize(pgf){
+		if (!pgf) return '';
+		let arr = pgf.match(/[a-z]+/gi);
+		return arr.map(word => {
+			return word.charAt(0).toUpperCase() + word.slice(1);
+		}).join(' ');
+	}
+
+	function action(){
+		let pgf = document.getElementById('pgf').value;
+		document.getElementById('result').innerHTML = firstCapitalize(pgf);
+	}
+
+	action();
+</script>

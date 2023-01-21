@@ -1,0 +1,23 @@
+<h4>Math Factorial</h4>
+<input id="num" size="1" style="text-align: right;">! equal to 
+<span id="result">?</span>
+<hr>
+<button onclick="calculate()">Calculate</button>
+
+<script>
+	function mathFactorial(num){
+		if(num>1){
+			return num * mathFactorial(num-1);
+		}else if(num>=0){
+			return 1
+		}else{
+			return undefined
+		}
+	}
+
+
+	function calculate(){
+		let num = parseInt(document.getElementById('num').value);	
+		document.getElementById('result').innerHTML = mathFactorial(num);
+	}
+</script>

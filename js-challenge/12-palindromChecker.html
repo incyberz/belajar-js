@@ -1,0 +1,54 @@
+<h4>palindromChecker</h4>
+<table width="100%" border="1" cellspacing="0" cellpadding="3">
+	<tr>
+		<td width="50%" align="center">
+			Strings
+		</td>
+		<td align="center">
+			is a Palindrome?
+		</td>
+	</tr>
+	<tr>
+		<td width="50%">
+			<ul>
+				<li id="str1">Was it a car or a cat I saw</li>
+				<li id="str2">Red rum, sir! is murder!!</li>
+				<li id="str3">Javascript is more loved than Java</li>
+			</ul>			
+		</td>
+		<td>
+			<ul>
+				<li id="res1">?</li>
+				<li id="res2">?</li>
+				<li id="res3">?</li>
+			</ul>
+		</td>
+	</tr>
+	
+</table>
+
+
+
+<script>
+
+	function palindromChecker(str){
+		let tmpStr = str.match(/[a-z0-9]+/ig).join('').toLowerCase()
+		let secondStr = tmpStr.split('').reverse().join('')
+		return tmpStr===secondStr
+	}
+
+	function action(){
+
+		let str1 = document.getElementById('str1').innerHTML;
+		let str2 = document.getElementById('str2').innerHTML;
+		let str3 = document.getElementById('str3').innerHTML;
+
+		document.getElementById('res1').innerHTML = palindromChecker(str1);
+		document.getElementById('res2').innerHTML = palindromChecker(str2);
+		document.getElementById('res3').innerHTML = palindromChecker(str3);
+
+	}
+
+	action();
+
+</script>

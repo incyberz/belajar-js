@@ -1,0 +1,24 @@
+<h4>uniqueLetter with Set Data Structure</h4>
+
+<input id="word" style="width:100%" onkeyup="action()">
+<hr>
+<p id="result">result</p>
+
+
+<script>
+	function uniqueLetter(word){
+		if (!word) return '';
+		let arr = word.match(/[a-z]/gi);
+		let set1 = new Set();
+		for(let i=0; i<arr.length;i++){set1.add(arr[i])}
+
+		return arr.length===set1.size ? `it's unique!` : `not unique`;
+	}
+
+	function action(){
+		let word = document.getElementById('word').value;
+		document.getElementById('result').innerHTML = uniqueLetter(word);
+	}
+
+	action();
+</script>
