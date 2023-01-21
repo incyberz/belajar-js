@@ -1,0 +1,31 @@
+<h1>JS POPUP</h1>
+
+<script type="text/javascript">
+	
+	// alert('Halo Javscipt!');
+
+	// confirm("Apakah Anda mau makan?");
+
+	// prompt("Apa yang akan Anda makan?", "Nasi Bungkus");
+
+</script>
+
+
+<button onclick="return confirm('Yakin untuk menghapus?')">Delete</button>
+
+<a href="https://google.com" onclick="return confirm('Apakah Anda mau ke Google?')" >Menuju Google</a>
+
+<script type="text/javascript">
+
+	function inputNama() {
+		let nama = prompt("Masukan Nama Anda:");
+		if(!nama.trim()) return;
+
+		alert("Halo "+nama+", Selamat Pagi!!\n\nSemoga Video ii bermanfaat.");
+	}
+	
+	inputNama();
+	
+
+	
+</script>

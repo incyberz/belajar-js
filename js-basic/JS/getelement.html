@@ -1,0 +1,14 @@
+<p id="demo" class="paragraf" name="p1">Ini adalah paragraf.</p>
+<p id="demo2" class="paragraf" name="p2">Ini adalah paragraf kedua</p>
+
+<script type="text/javascript">
+	
+	document.getElementById("demo").innerHTML = "Hello Javascript!";
+
+	document.getElementsByClassName("paragraf")[1].innerHTML = "Test";
+
+	document.getElementsByName("p1")[0].innerHTML = "Change by Name";
+
+	document.getElementsByTagName("p")[1].innerHTML = "Change By Tag Name";
+
+</script>

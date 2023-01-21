@@ -1,0 +1,55 @@
+<script type="text/javascript">
+  document.write('Halo JavaScript!<hr>');
+
+  var hari_ini = new Date();
+  var tgl_skg = hari_ini.toLocaleString();
+
+  var hari_ke = hari_ini.getDay();
+  var nama_hari = ["Ahad","Senin","Selasa",
+                  "Rabu","Kamis","Jumat","Sabtu"];
+
+  var bulan_ke = hari_ini.getMonth();
+  var nama_bulan = ["Januari","Februari","Maret",
+                   "April","Mei","Juni","Juli","Agustus",
+                   "September","Oktober","November",
+                   "Desember"];
+
+  document.write('Hari ini hari '+nama_hari[hari_ke]
+                 + ', '
+                 + hari_ke
+                 + ' '
+                 + nama_bulan[bulan_ke] 
+                 + ' '
+                 + hari_ini.getFullYear()
+                 + ' '
+                 + hari_ini.getHours()
+                 + ':'
+                 + hari_ini.getMinutes()
+                 + ' WIB'
+                 );
+
+  var hari_lahir = "Kamis";
+  var tgl_lahir = 11;
+  var bln_lahir = "Juni";
+  var thn_lahir = 1987;
+  document.write('<hr>Saya lahir pada hari '
+                + hari_lahir 
+                + ', '
+                + tgl_lahir
+                + ' '
+                + bln_lahir
+                + ' '
+                + thn_lahir
+                );
+
+  var usia_dalam_hari = 9867;
+  var selisih_ultah = 67;
+  document.write('<hr>Usia saya saat ini berumur '
+                + usia_dalam_hari 
+                + ' hari, dan dalam '
+                + selisih_ultah
+                + ' hari lagi saya berulang tahun :)'
+                );
+
+
+</script>

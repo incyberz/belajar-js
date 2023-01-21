@@ -1,0 +1,81 @@
+<h1>Aplikasi Saat Ini</h1>
+
+<p>Hari ini hari Kamis, 10 Februari 2022 Pukul 10:32 WIB</p>
+
+<script type="text/javascript">
+
+	let d = new Date()
+
+
+	let tgl = d.getDate();
+	let bln = d.getMonth();
+	let thn = d.getFullYear();
+	let weekday = d.getDay();
+
+	document.write(
+		"Tanggal: "+tgl 
+		+"<br>Bulan: "+(bln+1) 
+		+"<br>Tahun: "+thn 
+		+"<br>Weekday: "+weekday 
+		);
+
+	const nama_hari = [
+		"Ahad",
+		"Senin",
+		"Selasa",
+		"Rabu",
+		"Kamis",
+		"Jumat",
+		"Sabtu"
+	];
+	
+	const nama_bulan = [
+		"Januari",
+		"Februari",
+		"Maret",
+		"April",
+		"Mei",
+		"Juni",
+		"Juli",
+		"Agustus",
+		"September",
+		"Oktober",
+		"November",
+		"Desember"
+	];
+
+
+	document.write(
+		"<hr>Tanggal: "+tgl 
+		+"<br>Bulan: "+nama_bulan[bln] 
+		+"<br>Tahun: "+thn 
+		+"<br>Weekday: "+nama_hari[weekday] 
+		);
+	
+
+	let h = d.getHours();
+	let m = d.getMinutes();
+	let s = d.getSeconds();
+
+
+	document.write(
+		"<hr>Hari ini hari "
+		+nama_hari[weekday]
+		+", "
+		+tgl
+		+" "
+		+nama_bulan[bln]
+		+" "
+		+thn
+		+" Pukul "
+		+h
+		+":"
+		+m
+		+" WIB"
+		);
+
+
+
+
+
+</script>

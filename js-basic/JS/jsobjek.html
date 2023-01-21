@@ -1,0 +1,19 @@
+<h1>JS Object</h1>
+
+<script type="text/javascript">
+	
+	const jadwal = {
+		senin: "Mulai Kerja",
+		selasa: "Rapat",
+		rabu: "Laporan",
+
+		kerjaan: function(){
+			// return "ini adalah properti method";
+			return this.senin + " lalu " + this.selasa + " terakhir buat " + this.rabu;
+		}
+	};
+
+	alert(jadwal.kerjaan())
+
+
+</script>
